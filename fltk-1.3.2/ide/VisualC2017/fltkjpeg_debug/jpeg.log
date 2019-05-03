@@ -1,0 +1,52 @@
+﻿  jcapimin.c
+  jcapistd.c
+  jccoefct.c
+  jccolor.c
+  jcdctmgr.c
+  jchuff.c
+  jcinit.c
+  jcmainct.c
+  jcmarker.c
+  jcmaster.c
+  jcomapi.c
+  jcparam.c
+  jaricom.c
+  jcarith.c
+  jdarith.c
+  jcprepct.c
+  jcsample.c
+  jctrans.c
+  jdapimin.c
+  jdapistd.c
+  Generating Code...
+  Compiling...
+  jdatadst.c
+  jdatasrc.c
+  jdcoefct.c
+  jdcolor.c
+  jddctmgr.c
+  jdhuff.c
+  jdinput.c
+  jdmainct.c
+  jdmarker.c
+  jdmaster.c
+  jdmerge.c
+  jdpostct.c
+  jdsample.c
+  jdtrans.c
+  jerror.c
+  jfdctflt.c
+  jfdctfst.c
+  jfdctint.c
+  jidctflt.c
+  jidctfst.c
+  Generating Code...
+  Compiling...
+  jidctint.c
+  jmemmgr.c
+  jmemnobs.c
+  jquant1.c
+  jquant2.c
+  jutils.c
+  Generating Code...
+  jpeg.vcxproj -> C:\Users\Avishkar Kolahalu\Google Drive\USC\1. Animation & Simulation - CSCI 520\Assignments\Assignment 2\csci520-assignment2-startercode\fltk-1.3.2\ide\VisualC2017\..\..\lib\fltkjpegd.lib

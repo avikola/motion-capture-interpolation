@@ -1,0 +1,17 @@
+﻿  adler32.c
+  compress.c
+  crc32.c
+  deflate.c
+  gzclose.c
+  gzlib.c
+  gzread.c
+  gzwrite.c
+  infback.c
+  inffast.c
+  inflate.c
+  inftrees.c
+  trees.c
+  uncompr.c
+  zutil.c
+  Generating Code...
+  zlib.vcxproj -> C:\Users\Avishkar Kolahalu\Google Drive\USC\1. Animation & Simulation - CSCI 520\Assignments\Assignment 2\csci520-assignment2-startercode\fltk-1.3.2\ide\VisualC2017\..\..\lib\fltkzlibd.lib

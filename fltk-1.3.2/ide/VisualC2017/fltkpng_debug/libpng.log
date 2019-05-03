@@ -1,0 +1,17 @@
+﻿  png.c
+  pngerror.c
+  pngget.c
+  pngmem.c
+  pngpread.c
+  pngread.c
+  pngrio.c
+  pngrtran.c
+  pngrutil.c
+  pngset.c
+  pngtrans.c
+  pngwio.c
+  pngwrite.c
+  pngwtran.c
+  pngwutil.c
+  Generating Code...
+  libpng.vcxproj -> C:\Users\Avishkar Kolahalu\Google Drive\USC\1. Animation & Simulation - CSCI 520\Assignments\Assignment 2\csci520-assignment2-startercode\fltk-1.3.2\ide\VisualC2017\..\..\lib\fltkpngd.lib
