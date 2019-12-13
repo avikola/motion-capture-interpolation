@@ -5,8 +5,7 @@ Implementation of 3 methods of interpolation :
 * [SLERP interpolation for quaternions.](#2-input--slerp-quaternion)
 * [Bezier SLERP interpolation for quaternions.](#3-input--bezier-slerp-quaternion)
 
-& comparison of the methods to determine their effectiveness and their drawbacks.
-
+& comparison of the methods to determine their effectiveness and their drawbacks.\
 <br/>
 
 ## Plotted Graph Comparisons
@@ -27,6 +26,7 @@ On testing and comparing the methods :
 * The Linear method has very sharp curves, indicating dramatic motion change in some frames.
 * The Linear Quaternion method works quite well too, and is quite close to the input motion, however, sharp motion changes still exist.
 
+<br/>
 
 **The Bezier Quaternion method provides a much better result and avoids this problem.**
 
@@ -34,6 +34,7 @@ On testing and comparing the methods :
 
 **This is evident in the graphs above, as the curves are smoother.**\
 <br/>
+
 ## Comparison of Computation Time
 
 I compared the time values of the 4 methods on the same skeleton and motion file. The computational time required by the methods is as follows in increasing order (where N=10), i.e.
@@ -42,12 +43,13 @@ I compared the time values of the 4 methods on the same skeleton and motion file
 
 So Linear interpolation for Euler takes the least time, and Bezier SLERP interpolation for quaternions takes the most time, but has a much greater effectiveness.\
 <br/>
+
 ## Conclusion
 
 Linear interpolation may be quick, but the result is very sharp and undesirable.\
 Bezier quaternion interpolation on the other hand delivers a much better angular velocity that is smoother and preferred, and is worth its computational cost.\
-It is understandable how quaternions have become a standard in most industries.
-
+It is understandable how quaternions have become a standard in most industries.\
+<br/>
 
 ## Comparison GIFs
 
