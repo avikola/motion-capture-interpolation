@@ -5,8 +5,8 @@ Implementation of 3 methods of interpolation :
 * [SLERP interpolation for quaternions.](#2-input--slerp-quaternion)
 * [Bezier SLERP interpolation for quaternions.](#3-input--bezier-slerp-quaternion)
 
-& comparison of the methods to determine their effectiveness and their drawbacks.\
-<br/>
+& comparison of the methods to determine their effectiveness and their drawbacks.
+
 
 ## Plotted Graph Comparisons
 
