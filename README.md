@@ -1,9 +1,9 @@
 # Motion Capture Interpolation
 
-Implementation of 3 methods of interpolation :\
-* [Bezier interpolation for Euler angles.](1.-input-+-bezier-euler)\
-* [SLERP interpolation for quaternions.](2.-input-+-slerp-quaternion)\
-* [Bezier SLERP interpolation for quaternions.](3.-input-+-bezier-slerp-quaternion)] 
+Implementation of 3 methods of interpolation :
+* [Bezier interpolation for Euler angles.](#1.-input-+-bezier-euler)
+* [SLERP interpolation for quaternions.](#2.-input-+-slerp-quaternion)
+* [Bezier SLERP interpolation for quaternions.](#3.-input-+-bezier-slerp-quaternion)
 
 & comparison of the methods to determine their effectiveness and their drawbacks.
 
@@ -22,12 +22,12 @@ Implementation of 3 methods of interpolation :\
 
 ## Analysis + Observations
 
-On testing and comparing the methods :\
-* Bezier Euler is visibly better than Linear Euler. However, there is still a sharp abrupt motion which is quite undesirable.\
-* The Linear method has very sharp curves, indicating dramatic motion change in some frames.\
+On testing and comparing the methods :
+* Bezier Euler is visibly better than Linear Euler. However, there is still a sharp abrupt motion which is quite undesirable.
+* The Linear method has very sharp curves, indicating dramatic motion change in some frames.
 * The Linear Quaternion method works quite well too, and is quite close to the input motion, however, sharp motion changes still exist.
 
-> **The Bezier Quaternion method provides a much better result and avoids this problem.\
+**The Bezier Quaternion method provides a much better result and avoids this problem.\
 Although it is computationally more expensive, the smoothness of the motion is nearly identical to the input in most cases, and makes it worth the cost.\
 This is evident in the graphs above, as the curves are smoother.**
 
