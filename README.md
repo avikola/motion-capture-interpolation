@@ -1,7 +1,7 @@
 # Motion Capture Interpolation
 
 Implementation of 3 methods of interpolation :
-* [Bezier interpolation for Euler angles.](###1.-input-+-bezier-euler)
+* [Bezier interpolation for Euler angles.](#-1.-input-+-bezier-euler)
 * [SLERP interpolation for quaternions.](#2.-input-+-slerp-quaternion)
 * [Bezier SLERP interpolation for quaternions.](#3.-input-+-bezier-slerp-quaternion)
 
