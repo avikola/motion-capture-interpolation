@@ -1,5 +1,5 @@
-// Assignment 2 - Motion Capture Interpolation.
-// Avishkar Kolahalu - 6138428368
+// Motion Capture Interpolation.
+// Avishkar Kolahalu
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,32 +12,34 @@
 
 Interpolator::Interpolator()
 {
-  //Set default interpolation type
+  // Set default interpolation type
   m_InterpolationType = LINEAR;
 
-  //set default angle representation to use for interpolation
+  // Set default angle representation to use for interpolation
   m_AngleRepresentation = EULER;
 }
 
-Interpolator::~Interpolator()
-{
-}
+Interpolator::~Interpolator() { }
 
-//Create interpolated motion
+// Create interpolated motion
 void Interpolator::Interpolate(Motion * pInputMotion, Motion ** pOutputMotion, int N) 
 {
-  //Allocate new motion
+  // Allocate new motion
   *pOutputMotion = new Motion(pInputMotion->GetNumFrames(), pInputMotion->GetSkeleton()); 
 
-  //Perform the interpolation
+  // Perform the interpolation
   if ((m_InterpolationType == LINEAR) && (m_AngleRepresentation == EULER))
     LinearInterpolationEuler(pInputMotion, *pOutputMotion, N);
+
   else if ((m_InterpolationType == LINEAR) && (m_AngleRepresentation == QUATERNION))
     LinearInterpolationQuaternion(pInputMotion, *pOutputMotion, N);
+
   else if ((m_InterpolationType == BEZIER) && (m_AngleRepresentation == EULER))
     BezierInterpolationEuler(pInputMotion, *pOutputMotion, N);
+
   else if ((m_InterpolationType == BEZIER) && (m_AngleRepresentation == QUATERNION))
     BezierInterpolationQuaternion(pInputMotion, *pOutputMotion, N);
+
   else
   {
     printf("Error: unknown interpolation / angle representation type.\n");
@@ -102,7 +104,8 @@ void Interpolator::Rotation2Euler(double R[9], double angles[3])
     angles[0] = atan2(R[7], R[8]);
     angles[1] = atan2(-R[6], cy);
     angles[2] = atan2(R[3], R[0]);
-  } 
+  }
+
   else 
   {
     angles[0] = atan2(-R[5], R[4]);
@@ -118,6 +121,7 @@ void Interpolator::Rotation2Euler(double R[9], double angles[3])
 void Interpolator::Euler2Rotation(double angles[3], double R[9])
 {
 	int i, j;
+
 	// convert angles:
 	double rad[3] = { radConvert(angles[0]), radConvert(angles[1]), radConvert(angles[2]) };
 	Rotation temp, final;
@@ -160,7 +164,7 @@ void Interpolator::BezierInterpolationEuler(Motion * pInputMotion, Motion * pOut
 	Quaternion<double> first_q, last_q;
 	vector first, last, prev, next, T1;
 
-	length = pInputMotion->GetNumFrames();		// gets total frames.
+	length = pInputMotion->GetNumFrames();	// gets total frames.
 
 	// timer:
 	clock_t starter = clock();
@@ -242,7 +246,6 @@ void Interpolator::LinearInterpolationQuaternion(Motion * pInputMotion, Motion *
 	// timer:
 	clock_t starter = clock();
 
-
 	for (firstframe = 0; firstframe + N + 1 < length; firstframe = lastframe)
 	{
 		lastframe = firstframe + N + 1;
@@ -277,14 +280,11 @@ void Interpolator::LinearInterpolationQuaternion(Motion * pInputMotion, Motion *
 	}
 
 	for (int f2 = firstframe + 1; f2 < length; f2++)
-	{
 		pOutputMotion->SetPosture(f2, *(pInputMotion->GetPosture(f2)));
-	}
 
 	double time_taken = clock() - starter;
 	printf("Time Taken: %lf\n", time_taken / (double)CLOCKS_PER_SEC);
 	system("pause");
-
 }
 
 // BezierInterpolationQuaternion Implemented:
@@ -295,7 +295,7 @@ void Interpolator::BezierInterpolationQuaternion(Motion * pInputMotion, Motion *
 	Quaternion<double> first_q, last_q, ip_q, prev, next, T1;
 	vector first, last;
 
-	length = pInputMotion->GetNumFrames();		// gets total frames.
+	length = pInputMotion->GetNumFrames();	// gets total frames.
 
 	// timer:
 	clock_t starter = clock();
@@ -404,6 +404,7 @@ Quaternion<double> Interpolator::Slerp(double t, Quaternion<double> & qStart, Qu
 
 	if(dot >= 0)
 		quat = qEnd_;
+
 	else
 	{
 		dot *= -1;
@@ -418,12 +419,12 @@ Quaternion<double> Interpolator::Slerp(double t, Quaternion<double> & qStart, Qu
 		result.Normalize();
 		return result;
 	}
+
 	else
 		return qEnd_;
 	
 }
 
-// Implemented:
 Quaternion<double> Interpolator::Double(Quaternion<double> p, Quaternion<double> q)
 {
   Quaternion<double> result;
