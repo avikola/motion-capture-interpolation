@@ -63,3 +63,9 @@ It is understandable how quaternions have become a standard in most industries.\
 ![3. Input + Bezier SLERP quaternion GIF](/results/3.gif)
 
 
+
+
+<br/>
+<br/>
+
+*( base UI / display code by Jernej Barbic )*
